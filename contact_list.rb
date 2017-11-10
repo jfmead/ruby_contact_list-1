@@ -18,5 +18,5 @@ case user_input
     exit
   else
     puts
-    'Bad Input'
+    'Bad Input. Try again!'
 end
