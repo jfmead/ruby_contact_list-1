@@ -1,9 +1,8 @@
 require "pry"
 require 'colorize'
 
-# contacts = ["Emmy", "Fuchai", "Yurie"]
-
 contacts = []
+
 contact_details {}
 
 def view_contacts
