@@ -1,26 +1,66 @@
-require 'pry'
+require "pry"
 require 'colorize'
 
-puts "Welcome to teh contact list"
-puts 'Menu'
-puts '1) Show Contacts'
-puts '2) Add Contact'
-puts '3) Quit'
+# contacts = ["Emmy", "Fuchai", "Yurie"]
 
-contacts = ['Emmy', 'Amy', 'Max']
-user_input = gets.to_i
+contacts = []
+contact_details {}
 
-case user_input
+def view_contacts
+  contacts.each { |key,value| puts "#{key}: #{value}" }
+end
+
+
+def new_contact
+  puts "Enter Contact Name:"
+  name = gets.strip
+   # need error checking for each
+    name.length > 0 ? contact_details << name : "Please enter a valid name:"
+  puts "Enter Contact Email"
+  email = gets.strip
+  puts "Enter Contact Phone"
+end
+
+def edit_contact
+
+end
+
+def delete_contact
+
+end
+
+
+
+# print user options to screen
+puts "~~Contacts List Menu~~"
+puts "1) View all Contacts"
+puts "2) Add a New Contact"
+puts "3) Edit a Contact"
+puts "4) Delete A Contact"
+puts "5) Exit "
+puts "\n"
+
+choice = gets.chomp.to_i
+
+
+case choice
   when 1
-    contacts.each do |contact|
-      puts "Contact: #{contact}"
-    end
+    view_contacts
+
   when 2
-    puts 'add a new contact'
+    new_contact
+
   when 3
-    puts 'thanks for contact listing...'
-    exit
+    edit_contact
+
+  when 4
+    delete_contact
+
+  when 5
+    puts "Thank you for using the contact list"
+    exit(0)
   else
-    puts
-    'Bad Input. Try again!'
+    puts "That's not a valid option, please try again."
+  end
+
 end
