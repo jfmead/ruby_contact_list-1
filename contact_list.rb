@@ -41,10 +41,10 @@ def menu
   puts "\n"
 end
 
-choice = gets.chomp.to_i
 
 while true
-
+  menu
+  choice = gets.chomp.to_i
   case choice
     when 1
       view_contacts
@@ -63,10 +63,5 @@ while true
       exit(0)
     else
       puts "That's not a valid option, please try again."
-    end
   end
 end
-
-end
-
-menu
